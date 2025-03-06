@@ -29,7 +29,7 @@ It is a Telegram bot shop powered by aiogram that provides VPN sales via Telegra
 #### Setup
 
 ```bash
-git clone https://github.com/gunsh1p/marzban-shop.git
+git clone https://github.com/AlexShavkunov/marzban-shop.git
 cd marzban-shop
 docker compose build
 ```
