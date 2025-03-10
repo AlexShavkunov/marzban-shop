@@ -49,11 +49,11 @@ msgstr "Выберите подходящий тариф ⬇️"
 msgid ""
 "Your profile is not active at the moment.\n️"
 "\n"
-"You can choose \"5 days free 🆓\" or \"Join 🏄🏻‍♂️\"."
+"You can choose \"2 hours free 🆓\" or \"Join 🏄🏻‍♂️\"."
 msgstr ""
 "Ваш профиль не активен в данный момент.\n️"
 "\n"
-"Вы можете выбрать \"5 дней бесплатно 🆓\" или \"Присоединиться 🏄🏻‍♂️\"."
+"Вы можете выбрать \"2 часа бесплатно 🆓\" или \"Присоединиться 🏄🏻‍♂️\"."
 
 #: bot/handlers/messages.py:41
 msgid "Subscription page ⬇️"
@@ -124,8 +124,8 @@ msgid "Follow the <a href=\"{link}\">link</a> 🔗"
 msgstr "Перейти по <a href=\"{link}\">ссылке</a> 🔗"
 
 #: bot/keyboards/main_menu.py:23
-msgid "5 days free 🆓"
-msgstr "5 дней бесплатно 🆓"
+msgid "2 hours free 🆓"
+msgstr "2 часа бесплатно 🆓"
 
 #: bot/keyboards/pay.py:9
 msgid "Pay 💳"
