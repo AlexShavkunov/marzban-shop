@@ -14,7 +14,10 @@ PROTOCOLS = {
         {
             "flow": "xtls-rprx-vision"
         },
-        ["VLESS TCP REALITY"]
+        [
+            "VLESS TCP REALITY",
+            "VTR Moscow"
+        ]
     ],
     "trojan": [
         {},
