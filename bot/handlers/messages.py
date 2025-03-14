@@ -29,7 +29,7 @@ async def information(message: Message):
     await message.answer(
         _("Follow the <a href=\"{link}\">link</a> 🔗").format(
             link=glv.config['ABOUT']),
-        reply_markup=get_back_keyboard())
+        reply_markup=get_back_keyboard("Hello"))
 
 @router.message(F.text == __("Support ❤️"))
 async def support(message: Message):
