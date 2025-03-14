@@ -27,9 +27,8 @@ async def profile(message: Message):
 @router.message(F.text == __("Frequent questions ℹ️"))
 async def information(message: Message):
     await message.answer(
-        _("Follow the <a href=\"{link}\">link</a> 🔗").format(
-            link=glv.config['ABOUT']),
-        reply_markup=get_back_keyboard("Hello"))
+        _("Follow the link: https://google.com"),
+        reply_markup=get_back_keyboard())
 
 @router.message(F.text == __("Support ❤️"))
 async def support(message: Message):
