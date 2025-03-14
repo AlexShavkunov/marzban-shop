@@ -6,10 +6,6 @@ from db.methods import get_marzban_profile_db
 import glv
 
 PROTOCOLS = {
-    "vmess": [
-        {},
-        ["VMess TCP"]
-    ],
     "vless": [
         {
             "flow": "xtls-rprx-vision"
@@ -18,16 +14,6 @@ PROTOCOLS = {
             "VLESS TCP REALITY",
             "VTR Moscow"
         ]
-    ],
-    "trojan": [
-        {},
-        ["Trojan Websocket TLS"]
-    ],
-    "shadowsocks": [
-        {
-            "method": "chacha20-ietf-poly1305"
-        },
-        ["Shadowsocks TCP"]
     ]
 }
 
