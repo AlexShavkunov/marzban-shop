@@ -10,7 +10,7 @@ from db.methods import can_get_test_sub, update_test_subscription_state, get_mar
 from utils import marzban_api
 import glv
 
-router = Router(name="messages-router") 
+router = Router(name="messages-router")
 
 @router.message(F.text == __("Join 🏄🏻‍♂️"))
 async def buy(message: Message):
@@ -26,17 +26,10 @@ async def profile(message: Message):
 
 @router.message(F.text == __("Frequent questions ℹ️"))
 async def information(message: Message):
-    user = await marzban_api.get_marzban_profile(message.from_user.id)
-    if user is None:
-        await message.answer(_("Your profile is not active at the moment.\n️\nYou can choose \"2 hours free 🆓\" or \"Join 🏄🏻‍♂️\"."), reply_markup=get_main_menu_keyboard())
-        return
-
-    faq_link = glv.config['PANEL_GLOBAL'] + user['subscription_url'] + "#faq"
-
     await message.answer(
-        _("Follow the <a href=\"{link}\">link</a> 🔗").format(link=faq_link),
-        reply_markup=get_back_keyboard()
-    )
+        _("Follow the <a href=\"{link}\">link</a> 🔗").format(
+            link=glv.config['RULES_LINK']),
+        reply_markup=get_back_keyboard())
 
 @router.message(F.text == __("Support ❤️"))
 async def support(message: Message):
@@ -62,7 +55,7 @@ async def test_subscription(message: Message):
         ),
         reply_markup=get_main_menu_keyboard()
     )
-    
+
 @router.message(F.text == __("⏪ Back"))
 async def start_text(message: Message):
     await start(message)
