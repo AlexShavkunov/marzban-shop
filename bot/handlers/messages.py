@@ -26,10 +26,15 @@ async def profile(message: Message):
 
 @router.message(F.text == __("Frequent questions ℹ️"))
 async def information(message: Message):
-    await message.answer(
-        _("Follow the <a href=\"{link}\">link</a> 🔗").format(
-            link=glv.config['RULES_LINK']),
-        reply_markup=get_back_keyboard())
+    faq_text = (
+        f"{_('FAQ:')}\n\n"
+        f"{_('1. A subscription is a way to authorize and get the latest server configurations. Some apps can update configurations automatically, but not all of them. If your internet stops working, try updating the subscription manually in the app.')}\n"
+        f"{_('2. Are there connection limits? Yes, there are. You can connect from a maximum of 4 unique IP addresses. If the limit is exceeded, you need to disconnect one of your devices or wait for the connection list to update.')}\n"
+        f"{_('3. Why do I see that access is disabled? If you see that access is disabled, it may mean that the connection limit has been exceeded. Make sure you are using no more than 4 unique IP addresses and disconnect any extra devices.')}\n"
+        f"{_('4. What should I do if configurations are not added automatically? Try copying and pasting the link that is currently open manually into the app.')}"
+    )
+
+    await message.answer(faq_text, reply_markup=get_back_keyboard())
 
 @router.message(F.text == __("Support ❤️"))
 async def support(message: Message):
@@ -62,3 +67,4 @@ async def start_text(message: Message):
 
 def register_messages(dp: Dispatcher):
     dp.include_router(router)
+

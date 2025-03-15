@@ -127,6 +127,22 @@ msgstr "Перейти по <a href=\"{link}\">ссылке</a> 🔗"
 msgid "2 hours free 🆓"
 msgstr "2 часа бесплатно 🆓"
 
+#: bot/handlers/messages.py:45
+msgid "FAQ:"
+msgstr "FAQ:"
+
+msgid "1. A subscription is a way to authorize and get the latest server configurations. Some apps can update configurations automatically, but not all of them. If your internet stops working, try updating the subscription manually in the app."
+msgstr "1. Подписка — это способ авторизации и получения актуальных конфигураций серверов. Некоторые приложения могут обновлять конфигурации автоматически, но не все. Если интернет перестал работать, попробуйте вручную обновить подписку в приложении."
+
+msgid "2. Are there connection limits? Yes, there are. You can connect from a maximum of 4 unique IP addresses. If the limit is exceeded, you need to disconnect one of your devices or wait for the connection list to update."
+msgstr "2. Есть ли ограничения подключений? Да, есть. Вы можете подключаться максимум с 4 уникальных IP-адресов. Если лимит превышен, вам нужно отключить одно из устройств или подождать обновления списка подключений."
+
+msgid "3. Why do I see that access is disabled? If you see that access is disabled, it may mean that the connection limit has been exceeded. Make sure you are using no more than 4 unique IP addresses and disconnect any extra devices."
+msgstr "3. Почему я вижу, что доступ отключён? Если вы видите, что доступ отключён, это может означать превышение лимита подключений. Убедитесь, что вы используете не более 4 уникальных IP-адресов, и отключите лишние устройства."
+
+msgid "4. What should I do if configurations are not added automatically? Try copying and pasting the link that is currently open manually into the app."
+msgstr "4. Что делать, если конфигурации не добавляются автоматически? Попробуйте скопировать и вставить ссылку, которая у вас сейчас открыта, вручную в приложение."
+
 #: bot/keyboards/pay.py:9
 msgid "Pay 💳"
 msgstr "Оплатить 💳"
