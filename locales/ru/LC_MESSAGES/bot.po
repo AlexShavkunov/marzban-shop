@@ -140,8 +140,8 @@ msgstr "2. Есть ли ограничения подключений? Да, е
 msgid "3. Why do I see that access is disabled? If you see that access is disabled, it may mean that the connection limit has been exceeded. Make sure you are using no more than 4 unique IP addresses and disconnect any extra devices."
 msgstr "3. Почему я вижу, что доступ отключён? Если вы видите, что доступ отключён, это может означать превышение лимита подключений. Убедитесь, что вы используете не более 4 уникальных IP-адресов, и отключите лишние устройства."
 
-msgid "4. What should I do if configurations are not added automatically? Try copying and pasting the link that is currently open manually into the app."
-msgstr "4. Что делать, если конфигурации не добавляются автоматически? Попробуйте скопировать и вставить ссылку, которая у вас сейчас открыта, вручную в приложение."
+msgid "4. What should I do if configurations don’t add automatically? Try copying and pasting your subscription link manually."
+msgstr "4. Что делать, если конфигурации не добавляются автоматически? Попробуйте скопировать и вставить ссылку на вашу подписку вручную."
 
 #: bot/keyboards/pay.py:9
 msgid "Pay 💳"

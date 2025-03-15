@@ -31,7 +31,7 @@ async def information(message: Message):
         f"{_('1. A subscription is a way to authorize and get the latest server configurations. Some apps can update configurations automatically, but not all of them. If your internet stops working, try updating the subscription manually in the app.')}\n\n"
         f"{_('2. Are there connection limits? Yes, there are. You can connect from a maximum of 4 unique IP addresses. If the limit is exceeded, you need to disconnect one of your devices or wait for the connection list to update.')}\n\n"
         f"{_('3. Why do I see that access is disabled? If you see that access is disabled, it may mean that the connection limit has been exceeded. Make sure you are using no more than 4 unique IP addresses and disconnect any extra devices.')}\n\n"
-        f"{_('4. What should I do if configurations are not added automatically? Try copying and pasting the link that is currently open manually into the app.')}"
+        f"{_('4. What should I do if configurations don’t add automatically? Try copying and pasting your subscription link manually.')}"
     )
 
     await message.answer(faq_text, reply_markup=get_back_keyboard())

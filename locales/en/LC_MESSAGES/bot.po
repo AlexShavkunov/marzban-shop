@@ -124,7 +124,7 @@ msgstr ""
 msgid "3. Why do I see that access is disabled? If you see that access is disabled, it may mean that the connection limit has been exceeded. Make sure you are using no more than 4 unique IP addresses and disconnect any extra devices."
 msgstr ""
 
-msgid "4. What should I do if configurations are not added automatically? Try copying and pasting the link that is currently open manually into the app."
+msgid "4. What should I do if configurations don’t add automatically? Try copying and pasting your subscription link manually."
 msgstr ""
 
 #: bot/keyboards/pay.py:9
