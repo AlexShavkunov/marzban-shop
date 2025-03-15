@@ -15,7 +15,7 @@ def get_main_menu_keyboard(lang=None) -> ReplyKeyboardMarkup:
                 KeyboardButton(text=_("Frequent questions ℹ️"))
             ],
             [
-                KeyboardButton(text=_("Support ❤️"))
+                KeyboardButton(text=_("Support 💙"))
             ]
         ]
         
@@ -32,7 +32,7 @@ def get_main_menu_keyboard(lang=None) -> ReplyKeyboardMarkup:
             KeyboardButton(text=get_i18n_string("Frequent questions ℹ️", lang))
         ],
         [
-            KeyboardButton(text=get_i18n_string("Support ❤️", lang))
+            KeyboardButton(text=get_i18n_string("Support 💙", lang))
         ]
     ]
         

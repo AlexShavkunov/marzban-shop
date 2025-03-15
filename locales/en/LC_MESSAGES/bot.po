@@ -63,7 +63,7 @@ msgstr ""
 
 #: bot/handlers/messages.py:52
 msgid ""
-"Thank you for choice ❤️\n️"
+"Thank you for choice 💙\n️"
 "\n"
 "<a href=\"{link}.\">Subscribe</a> so you don't miss any announcements ✅\n️"
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: bot/app/routes.py:44
 msgid ""
-"Thank you for your choice ❤️\n️"
+"Thank you for your choice 💙\n️"
 "\n"
 "<a href=\"{link}\">Subscribe</a> so you don't miss any announcements ✅\n️"
 "\n"
@@ -100,7 +100,7 @@ msgid "Frequent questions ℹ️"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:18
-msgid "Support ❤️"
+msgid "Support 💙"
 msgstr ""
 
 #: bot/handlers/messages.py:32
@@ -139,7 +139,7 @@ msgstr ""
 msgid ""
 "Hello, {name} 👋🏻\n"
 "\n"
-"Thank you for using our service ❤️\n️"
+"Thank you for using our service 💙\n️"
 "\n"
 "Your VPN subscription expires at the end of the day tomorrow.\n️"
 "\n"
