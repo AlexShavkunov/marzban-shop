@@ -7,7 +7,7 @@ from utils import goods
 def calculate_discount_percentage(price_actual, price_reference):
     if price_reference == 0:
         return 0
-    return ((price_reference - price_actual) / price_reference) * 100
+    return ((price_actual - price_reference) / price_reference) * 100
 
 def get_buy_menu_keyboard() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
@@ -23,14 +23,14 @@ def get_buy_menu_keyboard() -> InlineKeyboardMarkup:
             price_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
                 months=good['months'],
                 price=actual_price,
-                discount=round(discount_percentage, 2)
+                discount=f"{round(discount_percentage, 2)}"
             )
         elif good['months'] == 12:
             discount_percentage = calculate_discount_percentage(actual_price, base_monthly_price * 12)
             price_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
                 months=good['months'],
                 price=actual_price,
-                discount=round(discount_percentage, 2)
+                discount=f"{round(discount_percentage, 2)}"
             )
         else:
             price_text = _("{months} месяц - {price}₽").format(
