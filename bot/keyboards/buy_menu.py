@@ -13,45 +13,35 @@ def get_buy_menu_keyboard() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     for good in goods.get():
-        # Рассчитываем месячную цену для каждого товара
-        monthly_price = good['price']['ru']
-        half_year_price = good['price']['half_year']
-        yearly_price = good['price']['year']
+        # Рассчитываем цену для полугода и года
+        base_monthly_price = goods.get()[0]['price']['ru']  # Базовая цена для 1 месяца
+        actual_price = good['price']['ru']
 
-        # Рассчитываем проценты
-        half_year_discount = calculate_discount_percentage(half_year_price, monthly_price * 6)
-        yearly_discount = calculate_discount_percentage(yearly_price, monthly_price * 12)
+        # Вычисляем скидку для полугода и года, если это применимо
+        if good['months'] == 6:
+            discount_percentage = calculate_discount_percentage(actual_price, base_monthly_price * 6)
+            price_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
+                months=good['months'],
+                price=actual_price,
+                discount=round(discount_percentage, 2)
+            )
+        elif good['months'] == 12:
+            discount_percentage = calculate_discount_percentage(actual_price, base_monthly_price * 12)
+            price_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
+                months=good['months'],
+                price=actual_price,
+                discount=round(discount_percentage, 2)
+            )
+        else:
+            price_text = _("{months} месяц - {price}₽").format(
+                months=good['months'],
+                price=actual_price
+            )
 
-        # Формируем новый текст с процентами для полугода и года
-        half_year_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
-            months=6,
-            price=half_year_price,
-            discount=round(half_year_discount, 2)
-        )
-
-        yearly_text = _("{months} месяцев - {price}₽ ({discount}%)").format(
-            months=12,
-            price=yearly_price,
-            discount=round(yearly_discount, 2)
-        )
-
-        # Формируем кнопку для каждого товара
+        # Добавляем кнопку для товара
         builder.row(InlineKeyboardButton(
-            text=_("{title} - {price_ru}₽").format(
-                title=good['title'],
-                price_ru=monthly_price
-            ),
+            text=price_text,
             callback_data=good['callback']
-        ))
-
-        builder.row(InlineKeyboardButton(
-            text=half_year_text,
-            callback_data=f"{good['callback']}_half_year"
-        ))
-
-        builder.row(InlineKeyboardButton(
-            text=yearly_text,
-            callback_data=f"{good['callback']}_year"
         ))
 
     return builder.as_markup()
