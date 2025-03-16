@@ -8,7 +8,7 @@ def get_subscription_keyboard(subscription_url) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     builder.row(
         InlineKeyboardButton(
-            text=_("Follow 🌐"),
+            text=_("Follow 🔗"),
             web_app=WebAppInfo(url=subscription_url)
         )
     )

@@ -41,13 +41,13 @@ async def check_crypto_payment(request: Request):
         good = goods.get(payment.callback)
         user = await get_marzban_profile_db(payment.tg_id)
         result = await marzban_api.generate_marzban_subscription(user.vpn_id, good)
-        text = get_i18n_string("Thank you for your choice 💙\n️\n<a href=\{link}\">Subscribe</a> so you don't miss any announcements ✅\n️\nYour subscription is purchased and available in \"My subscription 🔥\".", payment.lang)
+        text = get_i18n_string("Thank you for your choice 💙\n️\n<a href=\{link}\">Subscribe</a> so you don't miss any announcements ✅\n️\nYour subscription is purchased and available in \"My subscription 👤\".", payment.lang)
         await glv.bot.send_message(payment.chat_id,
-            text.format(
-                link=glv.config['PANEL_GLOBAL'] + result['subscription_url']
-            ),
-            reply_markup=get_main_menu_keyboard(payment.lang)
-        )
+                                   text.format(
+                                       link=glv.config['PANEL_GLOBAL'] + result['subscription_url']
+                                   ),
+                                   reply_markup=get_main_menu_keyboard(payment.lang)
+                                   )
         await delete_payment(payment.payment_uuid)
     if data['status'] == 'cancel':
         await delete_payment(payment.payment_uuid)
@@ -75,13 +75,13 @@ async def check_yookassa_payment(request: Request):
         good = goods.get(payment.callback)
         user = await get_marzban_profile_db(payment.tg_id)
         result = await marzban_api.generate_marzban_subscription(user.vpn_id, good)
-        text = get_i18n_string("Thank you for your choice 💙\n️\n<a href=\"{link}\">Subscribe</a> so you don't miss any announcements ✅\n️\nYour subscription is purchased and available in \"My subscription 🔥\".", payment.lang)
+        text = get_i18n_string("Thank you for your choice 💙\n️\n<a href=\"{link}\">Subscribe</a> so you don't miss any announcements ✅\n️\nYour subscription is purchased and available in \"My subscription 👤\".", payment.lang)
         await glv.bot.send_message(payment.chat_id,
-            text.format(
-                link=glv.config['PANEL_GLOBAL'] + result['subscription_url']
-            ),
-            reply_markup=get_main_menu_keyboard(payment.lang)
-        )
+                                   text.format(
+                                       link=glv.config['PANEL_GLOBAL'] + result['subscription_url']
+                                   ),
+                                   reply_markup=get_main_menu_keyboard(payment.lang)
+                                   )
         await delete_payment(payment.payment_id)
     if data['status'] == 'canceled':
         await delete_payment(payment.payment_id)
