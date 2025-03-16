@@ -20,37 +20,37 @@ msgstr ""
 "X-Generator: Poedit 2.0.2\n"
 
 #: bot/handlers/callbacks.py:27
-msgid "To be paid - {amount}₽ ⬇️"
+msgid "To be paid - {amount}₽ 💸"
 msgstr ""
 
 #: bot/handlers/callbacks.py:48
-msgid "To be paid - {amount}$ ⬇️"
+msgid "To be paid - {amount}$ 💸"
 msgstr ""
 
 #: bot/handlers/callbacks.py:59
-msgid "Select payment method ⬇️"
+msgid "Select payment method 💳"
 msgstr ""
 
 #: bot/handlers/commands.py:17
 msgid ""
 "Hello, {name} 👋🏻\n"
 "\n"
-"Select an action ⬇️"
+"Select an action ✨"
 msgstr ""
 
 #: bot/handlers/messages.py:29
-msgid "Choose the appropriate tariff ⬇️"
+msgid "Choose the appropriate tariff ⭐"
 msgstr ""
 
 #: bot/handlers/messages.py:38
 msgid ""
 "Your profile is not active at the moment.\n️"
 "\n"
-"You can choose \"2 hours free 🆓\" or \"Join 🏄🏻‍♂️\"."
+"You can choose \"2 hours free 🎁\" or \"Join 🚀\"."
 msgstr ""
 
 #: bot/handlers/messages.py:41
-msgid "Subscription page ⬇️"
+msgid "Subscription page 📱"
 msgstr ""
 
 #: bot/handlers/messages.py:52
@@ -58,7 +58,7 @@ msgid "Follow the <a href=\"{link}\">link</a> and ask us a question. We are alwa
 msgstr ""
 
 #: bot/handlers/messages.py:64
-msgid "Your subscription is available in the \"My subscription 👤\" section."
+msgid "Your subscription is available in the \"My subscription 🎯\" section."
 msgstr ""
 
 #: bot/handlers/messages.py:52
@@ -67,7 +67,7 @@ msgid ""
 "\n"
 "<a href=\"{link}.\">Subscribe</a> so you don't miss any announcements ✅\n️"
 "\n"
-"Your subscription is purchased and available in \"My subscription 👤\"."
+"Your subscription is purchased and available in \"My subscription 🎯\"."
 msgstr ""
 
 #: bot/app/routes.py:44
@@ -76,7 +76,7 @@ msgid ""
 "\n"
 "<a href=\"{link}\">Subscribe</a> so you don't miss any announcements ✅\n️"
 "\n"
-"Your subscription is purchased and available in \"My subscription 👤\"."
+"Your subscription is purchased and available in \"My subscription 🎯\"."
 msgstr ""
 
 #: bot/keyboards/back.py:7
@@ -88,15 +88,15 @@ msgid "{title} - {price_ru}₽"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:11
-msgid "Join 🏄🏻‍♂️"
+msgid "Join 🚀"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:14
-msgid "My subscription 👤"
+msgid "My subscription 🎯"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:15
-msgid "Frequent questions ℹ️"
+msgid "Frequent questions 📚"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:18
@@ -104,11 +104,11 @@ msgid "Support 💙"
 msgstr ""
 
 #: bot/handlers/messages.py:32
-msgid "Follow the <a href=\"{link}\">link</a> 🔗"
+msgid "Follow the <a href=\"{link}\">link</a> 🌍"
 msgstr ""
 
 #: bot/keyboards/main_menu.py:23
-msgid "2 hours free 🆓"
+msgid "2 hours free 🎁"
 msgstr ""
 
 #: bot/handlers/messages.py:45
@@ -143,9 +143,9 @@ msgid ""
 "\n"
 "Your VPN subscription expires at the end of the day tomorrow.\n️"
 "\n"
-"To renew it, just go to the \"Join 🏄🏻‍♂️\" section and make a payment."
+"To renew it, just go to the \"Join 🚀\" section and make a payment."
 msgstr ""
 
 #: bot/keyboards/subscription.py:11
-msgid "Follow 🔗"
+msgid "Follow 🌍"
 msgstr ""
