@@ -37,6 +37,6 @@ def get_main_menu_keyboard(lang=None) -> ReplyKeyboardMarkup:
     ]
 
     if glv.config['TEST_PERIOD']:
-        kb.insert(0, [KeyboardButton(text=get_i18n_string("⏳️Test subscription", lang)),])
+        kb.insert(0, [KeyboardButton(text=get_i18n_string("2 hours free 🎁", lang)),])
 
     return ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
