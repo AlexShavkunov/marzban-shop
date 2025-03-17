@@ -7,13 +7,16 @@ RUN ["pip", "install", "-r", "requirements.txt"]
 
 COPY bot /app
 
-ENTRYPOINT ["bash", "-c", "
-    pybabel compile -d locales -D bot;
+# Компилируем переводы
+RUN pybabel compile -d locales -D bot
+
+# Ждём, пока база будет готова
+CMD bash -c "
     echo 'Waiting for the database to be healthy...';
-    while ! mysqladmin ping -h $DB_ADDRESS -u$DB_USER -p$DB_PASS --silent; do
+    until mysqladmin ping -h \"$DB_ADDRESS\" -u\"$DB_USER\" -p\"$DB_PASS\" --silent; do
       sleep 2;
     done;
     echo 'Database is ready!';
     alembic upgrade head;
-    python main.py
-"]
+    exec python main.py
+"
