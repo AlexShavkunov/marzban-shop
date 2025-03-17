@@ -55,7 +55,7 @@ async def test_subscription(message: Message):
     result = await marzban_api.generate_test_subscription(result.vpn_id)
     await update_test_subscription_state(message.from_user.id)
     await message.answer(
-        _("Thank you for choice 💙\n️\n<a href=\"{link}\">Subscribe</a> so you don't miss any announcements ✅\n️\nYour subscription is purchased and available in \"My subscription 🎯\".").format(
+        _("Thank you for choice 💙\n️\nAccess granted! <a href=\"{link}\">Subscription and instructions</a> inside ✅\n\nYour subscription is purchased and available in \"My subscription 🎯\".").format(
             link=glv.config['PANEL_GLOBAL'] + result['subscription_url']
         ),
         reply_markup=get_main_menu_keyboard()
