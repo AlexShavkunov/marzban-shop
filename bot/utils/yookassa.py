@@ -38,7 +38,7 @@ async def create_payment(tg_id: int, callback: str, chat_id: int, lang_code: str
                 },
             ]
         }
-        })
+    })
     await add_yookassa_payment(tg_id, callback, chat_id, lang_code, resp.id)
     return {
         "url": resp.confirmation.confirmation_url,

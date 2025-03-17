@@ -107,6 +107,10 @@ msgstr ""
 msgid "Follow the <a href=\"{link}\">link</a> 🌍"
 msgstr ""
 
+#: bot/handlers/messages.py:67
+msgid "Wait, the test subscription is being generated"
+msgstr ""
+
 #: bot/keyboards/main_menu.py:23
 msgid "2 hours free 🎁"
 msgstr ""
