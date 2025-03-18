@@ -56,8 +56,8 @@ msgstr ""
 "Вы можете выбрать \"2 часа бесплатно 🎁\" или \"Присоединиться 🚀\"."
 
 #: bot/handlers/messages.py:41
-msgid "Subscription page 📱"
-msgstr "Страница подписки 📱"
+msgid "Subscription page — <a href=\"{link}\">Follow the link</a>"
+msgstr "Страница подписки — <a href=\"{link}\">Перейти по ссылке</a>"
 
 #: bot/handlers/messages.py:52
 msgid "Follow the <a href=\"{link}\">link</a> and ask us a question. We are always happy to help 🤗"

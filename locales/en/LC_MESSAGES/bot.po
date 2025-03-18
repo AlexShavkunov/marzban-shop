@@ -50,7 +50,7 @@ msgid ""
 msgstr ""
 
 #: bot/handlers/messages.py:41
-msgid "Subscription page 📱"
+msgid "Subscription page — <a href=\"{link}\">Follow the link</a>"
 msgstr ""
 
 #: bot/handlers/messages.py:52
