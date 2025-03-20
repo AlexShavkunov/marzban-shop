@@ -11,4 +11,4 @@ alembic
 wait-for-it
 aioschedule
 tzlocal==5.2
-dateutil==3.9.0
+dateutil
