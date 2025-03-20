@@ -3,7 +3,7 @@ import aiohttp
 import requests
 
 from db.methods import get_marzban_profile_db
-from datetime import datetime
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
 import glv
@@ -152,7 +152,22 @@ async def generate_marzban_subscription(username: str, good):
 def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
-def get_subscription_end_date(months: int, additional= False) -> int:
+def get_subscription_end_date(months: int, additional=False) -> int:
+    # Определяем начальную дату
     start_time = datetime.now() if not additional else datetime.fromtimestamp(time.time())
+    target_day = start_time.day
+
+    # Пытаемся установить ту же дату в следующем месяце
     end_time = start_time + relativedelta(months=months)
+
+    # Если день сместился (например, 31 января -> 28 февраля или 31 марта -> 30 апреля)
+    if end_time.day != target_day:
+        last_day_of_month = (end_time.replace(day=1) + relativedelta(months=1, days=-1)).day
+        end_time = end_time.replace(day=last_day_of_month)
+
+        # Добавляем недостающие дни, чтобы компенсировать разницу до целевого дня
+        extra_days = target_day - last_day_of_month
+        if extra_days > 0:
+            end_time += timedelta(days=extra_days)
+
     return int(end_time.timestamp())
