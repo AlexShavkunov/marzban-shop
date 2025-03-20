@@ -10,3 +10,4 @@ yookassa
 alembic
 wait-for-it
 aioschedule
+tzlocal==5.2
