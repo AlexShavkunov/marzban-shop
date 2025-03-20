@@ -22,7 +22,10 @@ async def profile(message: Message):
     if user is None:
         await message.answer(_("Your profile is not active at the moment.\n️\nYou can choose \"2 hours free 🎁\" or \"Join 🚀\"."), reply_markup=get_main_menu_keyboard())
         return
-    await message.answer(_("Subscription page — <a href=\"{link}\">Follow the link</a>").format(link=glv.config['PANEL_GLOBAL'] + user['subscription_url']), reply_markup=get_back_keyboard())
+    subscription_text = _("Subscription page — <a href=\"{link}\">Follow the link</a>").format(
+        link=glv.config['PANEL_GLOBAL'] + user['subscription_url']
+    )
+    await message.answer(subscription_text, reply_markup=get_back_keyboard())
 
 @router.message(F.text == __("Frequent questions 📚"))
 async def information(message: Message):
