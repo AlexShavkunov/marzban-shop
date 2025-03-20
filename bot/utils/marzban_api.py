@@ -1,11 +1,11 @@
 import time
 import aiohttp
 import requests
+import datetime
 
 from db.methods import get_marzban_profile_db
-from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from tzlocal import get_localzone
+import tzlocal
 
 import glv
 
@@ -154,7 +154,12 @@ def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
 def get_subscription_end_date(months: int, additional=False) -> int:
-    local_tz = get_localzone()
+    # Определяем локальный часовой пояс пользователя
+    local_tz = tzlocal.get_localzone()
+
+    # Берем текущую дату с обнулением времени и учётом часового пояса
     start_date = datetime.now(local_tz).replace(hour=0, minute=0, second=0, microsecond=0) if not additional else datetime.fromtimestamp(0, local_tz)
+
+    # Добавляем указанное количество месяцев
     end_date = start_date + relativedelta(months=months)
     return int(end_date.timestamp())
