@@ -3,6 +3,9 @@ import aiohttp
 import requests
 
 from db.methods import get_marzban_profile_db
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
 import glv
 
 PROTOCOLS = {
@@ -149,5 +152,7 @@ async def generate_marzban_subscription(username: str, good):
 def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
-def get_subscription_end_date(months: int, additional = False) -> int:
-    return (0 if additional else int(time.time())) + 60 * 60 * 24 * 30 * months
+def get_subscription_end_date(months: int, additional= False) -> int:
+    start_time = datetime.now() if not additional else datetime.fromtimestamp(0)
+    end_time = start_time + relativedelta(months=months)
+    return int(end_time.timestamp())
