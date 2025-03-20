@@ -71,12 +71,7 @@ msgid ""
 msgstr ""
 
 #: bot/app/routes.py:44
-msgid ""
-"Thank you for your choice 💙\n️"
-"\n"
-"Access granted! <a href=\"{link}\">Subscription and instructions</a> inside ✅\n"
-"\n"
-"Your subscription is purchased and available in \"My subscription 🎯\"."
+msgid "Thank you for your choice 💙\n️\nAccess granted! <a href=\"{link}\">Subscription and instructions</a> inside ✅\n️\nYour subscription is purchased and available in \"My subscription 🎯\"."
 msgstr ""
 
 #: bot/keyboards/back.py:7

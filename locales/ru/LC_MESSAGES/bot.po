@@ -82,18 +82,8 @@ msgstr ""
 "Подписка оплачена и доступна в разделе \"Моя подписка 🎯\"."
 
 #: bot/app/routes.py:44
-msgid ""
-"Thank you for your choice 💙\n️"
-"\n"
-"Access granted! <a href=\"{link}\">Subscription and instructions</a> inside ✅\n"
-"\n"
-"Your subscription is purchased and available in \"My subscription 🎯\"."
-msgstr ""
-"Благодарим за ваш выбор 💙\n️"
-"\n"
-"Доступ получен! <a href=\"{link}\">Подписка и инструкция</a> внутри ✅\n"
-"\n"
-"Подписка оплачена и доступна в разделе \"Моя подписка 🎯\"."
+msgid "Thank you for your choice 💙\n️\nAccess granted! <a href=\"{link}\">Subscription and instructions</a> inside ✅\n️\nYour subscription is purchased and available in \"My subscription 🎯\"."
+msgstr "Благодарим за ваш выбор 💙\n\nДоступ получен! <a href=\"{link}\">Подписка и инструкция</a> внутри ✅\n\nПодписка оплачена и доступна в разделе \"Моя подписка 🎯\"."
 
 #: bot/keyboards/back.py:7
 msgid "⏪ Back"
