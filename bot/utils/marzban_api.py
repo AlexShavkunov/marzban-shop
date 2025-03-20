@@ -153,6 +153,6 @@ def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
 def get_subscription_end_date(months: int, additional= False) -> int:
-    start_time = datetime.now() if not additional else datetime.fromtimestamp(0)
+    start_time = datetime.now() if not additional else datetime.fromtimestamp(time.time())
     end_time = start_time + relativedelta(months=months)
     return int(end_time.timestamp())
