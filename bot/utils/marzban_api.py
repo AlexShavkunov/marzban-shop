@@ -162,6 +162,7 @@ def get_subscription_end_date(months: int, additional=False) -> int:
 
     # Если день сместился (например, 31 января -> 28 февраля или 31 марта -> 30 апреля)
     if end_time.day != target_day:
+        # Ставим последний день месяца
         last_day_of_month = (end_time.replace(day=1) + relativedelta(months=1, days=-1)).day
         end_time = end_time.replace(day=last_day_of_month)
 
@@ -169,5 +170,8 @@ def get_subscription_end_date(months: int, additional=False) -> int:
         extra_days = target_day - last_day_of_month
         if extra_days > 0:
             end_time += timedelta(days=extra_days)
+    else:
+        # Если дата совпадает точно, оставляем её как есть
+        end_time = end_time.replace(day=target_day)
 
     return int(end_time.timestamp())
