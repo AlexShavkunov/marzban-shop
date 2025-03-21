@@ -10,5 +10,4 @@ yookassa
 alembic
 wait-for-it
 aioschedule
-tzlocal
 python-dateutil
