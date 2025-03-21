@@ -158,7 +158,7 @@ def get_subscription_end_date(months: int, additional=False) -> int:
     local_tz = tzlocal.get_localzone()
 
     # Берем текущую дату с обнулением времени и учётом часового пояса
-    start_date = datetime.now(local_tz).replace(hour=0, minute=0, second=0, microsecond=0) if not additional else datetime.fromtimestamp(0, local_tz)
+    start_date = datetime.now(local_tz) if not additional else datetime.fromtimestamp(0, local_tz)
 
     # Добавляем указанное количество месяцев
     end_date = start_date + relativedelta(months=months)
