@@ -2,8 +2,8 @@ import time
 import aiohttp
 import requests
 
-from datetime import datetime, timezone, timedelta
 from db.methods import get_marzban_profile_db
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 import glv
@@ -152,19 +152,10 @@ async def generate_marzban_subscription(username: str, good):
         result = await panel.add_user(user)
     return result
 
-def get_test_subscription(hours: int, additional=False) -> int:
-    moscow_offset = timedelta(hours=3)
-    moscow_tz = timezone(moscow_offset)
-    start_date = datetime.now(moscow_tz) if not additional else datetime(1970, 1, 1, tzinfo=moscow_tz)
-    end_date = start_date + timedelta(hours=hours)
-    return int(end_date.timestamp())
+def get_test_subscription(hours: int, additional= False) -> int:
+    return (0 if additional else int(time.time())) + 60 * 60 * hours
 
 def get_subscription_end_date(months: int, additional=False) -> int:
-    moscow_offset = timedelta(hours=3)
-    start_date = datetime.now() + moscow_offset
-    if additional:
-        end_date = start_date + relativedelta(months=months)
-    else:
-        end_date = datetime.now() + relativedelta(months=months)
-
+    start_date = datetime.now() if not additional else datetime.fromtimestamp(0)
+    end_date = start_date + relativedelta(months=months)
     return int(end_date.timestamp())
