@@ -161,6 +161,10 @@ def get_test_subscription(hours: int, additional=False) -> int:
 
 def get_subscription_end_date(months: int, additional=False) -> int:
     moscow_offset = timedelta(hours=3)
-    start_date = datetime.now() + moscow_offset if not additional else datetime(1970, 1, 1) + moscow_offset
-    end_date = start_date + relativedelta(months=months)
+    start_date = datetime.now() + moscow_offset
+    if additional:
+        end_date = start_date + relativedelta(months=months)
+    else:
+        end_date = datetime.now() + relativedelta(months=months)
+
     return int(end_date.timestamp())
