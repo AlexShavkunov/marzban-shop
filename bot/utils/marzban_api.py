@@ -133,10 +133,13 @@ async def generate_marzban_subscription(username: str, good):
     if res:
         user = await panel.get_user(username)
         user['status'] = 'active'
-        if user['expire'] < time.time():
+        if user.get('expire') is None:
+            user['expire'] = get_subscription_end_date(good['months'])
+        elif user['expire'] < time.time():
             user['expire'] = get_subscription_end_date(good['months'])
         else:
             user['expire'] += get_subscription_end_date(good['months'], True)
+
         result = await panel.modify_user(username, user)
     else:
         user = {
@@ -154,12 +157,7 @@ def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
 def get_subscription_end_date(months: int, additional=False) -> int:
-    # Определяем локальный часовой пояс пользователя
     local_tz = tzlocal.get_localzone()
-
-    # Берем текущую дату с обнулением времени и учётом часового пояса
     start_date = datetime.now(local_tz) if not additional else datetime.fromtimestamp(0, local_tz)
-
-    # Добавляем указанное количество месяцев
     end_date = start_date + relativedelta(months=months)
     return int(end_date.timestamp())
