@@ -152,8 +152,12 @@ async def generate_marzban_subscription(username: str, good):
         result = await panel.add_user(user)
     return result
 
-def get_test_subscription(hours: int, additional= False) -> int:
-    return (0 if additional else int(time.time())) + 60 * 60 * hours
+def get_test_subscription(hours: int, additional=False) -> int:
+    moscow_offset = timedelta(hours=3)
+    start_date = datetime.now() + moscow_offset if not additional else datetime(1970, 1, 1) + moscow_offset
+    end_date = start_date + timedelta(hours=hours)
+    return int(end_date.timestamp())
+
 
 def get_subscription_end_date(months: int, additional=False) -> int:
     moscow_offset = timedelta(hours=3)
