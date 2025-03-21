@@ -11,4 +11,3 @@ alembic
 wait-for-it
 aioschedule
 python-dateutil
-pytz

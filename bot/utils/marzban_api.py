@@ -2,11 +2,10 @@ import time
 import aiohttp
 import requests
 
+from datetime import datetime, timezone, timedelta
 from db.methods import get_marzban_profile_db
-from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-import pytz
 import glv
 
 PROTOCOLS = {
@@ -156,20 +155,8 @@ async def generate_marzban_subscription(username: str, good):
 def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
-def get_user_timezone() -> str:
-    try:
-        response = requests.get("https://ipinfo.io/json")
-        response.raise_for_status()
-        data = response.json()
-        return data.get("timezone", "Europe/Moscow")
-    except Exception as e:
-        print(f"Failed to get timezone: {e}, defaulting to Moscow timezone.")
-        return "Europe/Moscow"
-
-
 def get_subscription_end_date(months: int, additional=False) -> int:
-    user_timezone = get_user_timezone()
-    user_tz = pytz.timezone(user_timezone)
-    start_date = datetime.now(user_tz) if not additional else datetime(1970, 1, 1, tzinfo=user_tz)
+    moscow_offset = timedelta(hours=3)
+    start_date = datetime.now() + moscow_offset if not additional else datetime(1970, 1, 1) + moscow_offset
     end_date = start_date + relativedelta(months=months)
     return int(end_date.timestamp())
