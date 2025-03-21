@@ -1,9 +1,8 @@
 import time
 import aiohttp
 import requests
-import pytz
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from db.methods import get_marzban_profile_db
 from dateutil.relativedelta import relativedelta
 
@@ -157,7 +156,7 @@ def get_test_subscription(hours: int, additional= False) -> int:
     return (0 if additional else int(time.time())) + 60 * 60 * hours
 
 def get_subscription_end_date(months: int, additional=False) -> int:
-    moscow_tz = pytz.timezone('Europe/Moscow')
-    start_date = datetime.now(moscow_tz) if not additional else datetime.fromtimestamp(0, moscow_tz)
+    moscow_offset = timedelta(hours=3)
+    start_date = datetime.now() + moscow_offset if not additional else datetime(1970, 1, 1) + moscow_offset
     end_date = start_date + relativedelta(months=months)
     return int(end_date.timestamp())
